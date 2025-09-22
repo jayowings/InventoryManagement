@@ -36,3 +36,7 @@ function updateProductQuantity(id, newQuantity){
     }
 }
 
+function generateReport(){
+    /////////TODO/////////
+}
+
