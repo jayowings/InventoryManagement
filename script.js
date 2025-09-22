@@ -44,3 +44,10 @@ function filterByCategory(category){
     ////////////TODO////////////
 }
 
+function calculateTotalInventoryValue(){
+    ////////////////////TODO////////////
+}
+
+function lowStockAlert(){
+    /////////////////TODO//////////
+}
