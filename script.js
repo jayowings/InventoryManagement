@@ -40,3 +40,7 @@ function generateReport(){
     /////////TODO/////////
 }
 
+function filterByCategory(category){
+    ////////////TODO////////////
+}
+
