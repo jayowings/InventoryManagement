@@ -7,13 +7,21 @@ function addProduct(name, category, quantity, price){
         category : category,
         quantity : quantity,
         price : price
-    }
+    };
     if(temp.quantity < 0){
         console.log("Error: invalid quantity");
-    }
-    else if(temp.price < 0){
+    }else if(temp.price < 0){
         console.log("Error: invalid price");
     }else{
         inventory.push(temp);
+    }
+}
+
+function removeProduct(id){
+    if(inventory.length <= id || inventory[id] == undefined)
+    {
+        console.log(`Error: Item ${id} does not exist`);
+    }else{
+        delete inventory[id];
     }
 }
