@@ -25,3 +25,14 @@ function removeProduct(id){
         delete inventory[id];
     }
 }
+
+function updateProductQuantity(id, newQuantity){
+    if(inventory.length <= id || inventory[id] == undefined){
+        console.log(`Error: Item ${id} does not exist`);
+    }else if(newQuantity < 0){
+        console.log("Error: invalid quantity");
+    }else{
+        inventory[id].quantity = newQuantity;
+    }
+}
+
