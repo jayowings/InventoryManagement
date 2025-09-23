@@ -105,9 +105,9 @@ removeProduct(0);
 
 generateReport(inventory);
 
-//console.log("Clothing:");
+console.log("Clothing:");
 
-filterByCategory("Clothing");
+//filterByCategory("Clothing");
 
 console.log("Total value");
 
