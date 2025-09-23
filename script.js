@@ -52,8 +52,8 @@ function categorize(value){
     return value.category == txt;
 }
 
-function filterByCategory(category){
-    let txt = category;
+function filterByCategory(cat){
+    let txt = cat;
     let filtered = inventory.filter(categorize());
     generateReport(filtered);
     if(filtered.length == 0){
@@ -62,12 +62,18 @@ function filterByCategory(category){
 }
 
 function value(total, value){
-    return total + (value.price * value.quantity);
+    if (typeof total != "number"){
+        total = parseFloat(0);
+    }
+    if(value.price < 0.01){
+        return total;
+    }else{
+    return total + parseFloat(value.price * value.quantity);
+    }
 }
 
 function calculateTotalInventoryValue(){
-    let total = inventory.reduce(value);
-    console.log(`Inventory valued at $${total}`);
+    console.log(`Inventory valued at $${inventory.reduce(value)}`);
 }
 
 function low(value){
@@ -99,7 +105,7 @@ removeProduct(0);
 
 generateReport(inventory);
 
-console.log("Cloting:");
+//console.log("Clothing:");
 
 filterByCategory("Clothing");
 
