@@ -37,7 +37,8 @@ function updateProductQuantity(id, newQuantity){
 }
 
 function generateReport(){
-    /////////TODO/////////
+    let txt = "";
+    inventory.forEach(txt += name + ": ->" + quantity + "<br>")
 }
 
 function filterByCategory(category){
