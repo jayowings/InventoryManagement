@@ -59,8 +59,13 @@ function filterByCategory(category){
     }
 }
 
+function value(total, value){
+    return total + (value.price * value.quantity);
+}
+
 function calculateTotalInventoryValue(){
-    ////////////////////TODO////////////
+    let total = inventory.reduce(value);
+    console.log(`Inventory valued at $${total}`);
 }
 
 function low(value){
