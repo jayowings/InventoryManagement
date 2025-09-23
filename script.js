@@ -1,4 +1,5 @@
 let inventory = [];
+let txt = "";
 
 function addProduct(name, category, quantity, price){
     let temp = {
@@ -36,23 +37,24 @@ function updateProductQuantity(id, newQuantity){
     }
 }
 
-function report(value){
-    txt += value.name + ": ->" + value.quantity + "<br>";
-
-}
-
 function generateReport(array){
-    let txt = "";
+    txt = "";
     array.forEach(report);
     console.log(txt);
 }
 
-function categorize(category, value){
-    return value.category == category;
+function report(value){
+    txt += value.name + ": -> " + value.quantity + "\n";
+
+}
+
+function categorize(value){
+    return value.category == txt;
 }
 
 function filterByCategory(category){
-    let filtered = inventory.filter(categorize(category));
+    let txt = category;
+    let filtered = inventory.filter(categorize());
     generateReport(filtered);
     if(filtered.length == 0){
         console.log("Error: no items found in this category");
@@ -91,7 +93,7 @@ updateProductQuantity(3, 2);
 
 generateReport(inventory);
 
-console.log("remove wireless mouse");
+console.log("Remove wireless mouse");
 
 removeProduct(0);
 
