@@ -36,9 +36,15 @@ function updateProductQuantity(id, newQuantity){
     }
 }
 
+function report(value){
+    txt += value.name + ": ->" + value.quantity + "<br>";
+
+}
+
 function generateReport(){
     let txt = "";
-    inventory.forEach(txt += name + ": ->" + quantity + "<br>")
+    inventory.forEach(report)
+    console.log(txt);
 }
 
 function filterByCategory(category){
