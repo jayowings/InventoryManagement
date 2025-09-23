@@ -41,14 +41,22 @@ function report(value){
 
 }
 
-function generateReport(){
+function generateReport(array){
     let txt = "";
-    inventory.forEach(report)
+    array.forEach(report)
     console.log(txt);
 }
 
+function categorize(category, value){
+    return value.category == category;
+}
+
 function filterByCategory(category){
-    ////////////TODO////////////
+    let filtered = inventory.filter(categorize(category));
+    generateReport(filtered);
+    if(filtered.length == 0){
+        console.log("Error: no items found in this category");
+    }
 }
 
 function calculateTotalInventoryValue(){
