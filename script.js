@@ -76,3 +76,35 @@ function lowStockAlert(){
     let lowStock = inventory.filter(low);
     generateReport(lowStock);
 }
+
+
+addProduct("Wireless Mouse", "Electronics", 50, 29.99);
+addProduct("Wireless Keyboard", "Electronics", 25, 32.87);
+addProduct("Caravelli 3-piece suit", "Clothing", 9, 199.99);
+addProduct("The Holy Bible", "Literiture", 17, 15.75);
+
+generateReport(inventory);
+
+console.log("Update quantity for Bible");
+
+updateProductQuantity(3, 2);
+
+generateReport(inventory);
+
+console.log("remove wireless mouse");
+
+removeProduct(0);
+
+generateReport(inventory);
+
+console.log("Cloting:");
+
+filterByCategory("Clothing");
+
+console.log("Total value");
+
+calculateTotalInventoryValue();
+
+console.log("Checking low stock");
+
+lowStockAlert();
