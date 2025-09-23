@@ -43,7 +43,7 @@ function report(value){
 
 function generateReport(array){
     let txt = "";
-    array.forEach(report)
+    array.forEach(report);
     console.log(txt);
 }
 
@@ -63,6 +63,11 @@ function calculateTotalInventoryValue(){
     ////////////////////TODO////////////
 }
 
+function low(value){
+    return value.quantity < 10;
+}
+
 function lowStockAlert(){
-    /////////////////TODO//////////
+    let lowStock = inventory.filter(low);
+    generateReport(lowStock);
 }
